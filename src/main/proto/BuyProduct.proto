@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+message RequestRefillCheck {
+  int32 personId =1;
+  int32 refillSum = 2;
+}
+
+message ResponseRefill {
+  string message = 1;
+}
+
+service RefillCheckService {
+  rpc doRefill (RequestRefillCheck) returns (ResponseRefill);
+}
